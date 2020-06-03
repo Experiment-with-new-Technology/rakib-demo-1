@@ -48,6 +48,21 @@ public class CacheConfiguration {
             createCache(cm, extremecoder.domain.User.class.getName());
             createCache(cm, extremecoder.domain.Authority.class.getName());
             createCache(cm, extremecoder.domain.User.class.getName() + ".authorities");
+            createCache(cm, extremecoder.domain.Region.class.getName());
+            createCache(cm, extremecoder.domain.Country.class.getName());
+            createCache(cm, extremecoder.domain.Location.class.getName());
+            createCache(cm, extremecoder.domain.Department.class.getName());
+            createCache(cm, extremecoder.domain.Department.class.getName() + ".employees");
+            createCache(cm, extremecoder.domain.Task.class.getName());
+            createCache(cm, extremecoder.domain.Task.class.getName() + ".jobs");
+            createCache(cm, extremecoder.domain.Employee.class.getName());
+            createCache(cm, extremecoder.domain.Employee.class.getName() + ".jobs");
+            createCache(cm, extremecoder.domain.Job.class.getName());
+            createCache(cm, extremecoder.domain.Job.class.getName() + ".tasks");
+            createCache(cm, extremecoder.domain.JobHistory.class.getName());
+            createCache(cm, extremecoder.domain.AppStatus.class.getName());
+            createCache(cm, extremecoder.domain.Application.class.getName());
+            createCache(cm, extremecoder.domain.BusinessCategory.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

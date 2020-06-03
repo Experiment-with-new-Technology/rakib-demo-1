@@ -1,0 +1,38 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="businessCategory">
+            <h2><span jhiTranslate="blogApp.businessCategory.detail.title">Business Category</span> {{
+                businessCategory.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="blogApp.businessCategory.name">Name</span></dt>
+                <dd>
+                    <span>{{ businessCategory.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="blogApp.businessCategory.parentCategory">Parent Category</span></dt>
+                <dd>
+                    <div *ngIf="businessCategory.parentCategory">
+                        <a [routerLink]="['/business-category', businessCategory.parentCategory?.id, 'view']">{{
+                            businessCategory.parentCategory?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/business-category', businessCategory.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

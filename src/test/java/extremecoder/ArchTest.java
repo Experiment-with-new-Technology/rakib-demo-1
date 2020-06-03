@@ -18,12 +18,12 @@ class ArchTest {
 
         noClasses()
             .that()
-                .resideInAnyPackage("extremecoder.service..")
+            .resideInAnyPackage("extremecoder.service..")
             .or()
-                .resideInAnyPackage("extremecoder.repository..")
+            .resideInAnyPackage("extremecoder.repository..")
             .should().dependOnClassesThat()
-                .resideInAnyPackage("..extremecoder.web..")
-        .because("Services and repositories should not depend on web layer")
-        .check(importedClasses);
+            .resideInAnyPackage("..extremecoder.web..")
+            .because("Services and repositories should not depend on web layer")
+            .check(importedClasses);
     }
 }

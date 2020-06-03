@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="application">
+            <h2><span jhiTranslate="blogApp.application.detail.title">Application</span> {{ application.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="blogApp.application.name">Name</span></dt>
+                <dd>
+                    <span>{{ application.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="blogApp.application.version">Version</span></dt>
+                <dd>
+                    <span>{{ application.version }}</span>
+                </dd>
+                <dt><span jhiTranslate="blogApp.application.status">Status</span></dt>
+                <dd>
+                    <div *ngIf="application.status">
+                        <a [routerLink]="['/app-status', application.status?.id, 'view']">{{ application.status?.id
+                            }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="blogApp.application.businessCategory">Business Category</span></dt>
+                <dd>
+                    <div *ngIf="application.businessCategory">
+                        <a [routerLink]="['/business-category', application.businessCategory?.id, 'view']">{{
+                            application.businessCategory?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/application', application.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

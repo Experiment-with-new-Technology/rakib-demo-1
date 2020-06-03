@@ -38,6 +38,8 @@
     "enableTranslation": true,
     "nativeLanguage": "en",
     "languages": ["en", "bn"],
-    "blueprints": []
+    "blueprints": [],
+    "herokuAppName": "rakib-demo-1",
+    "herokuDeployType": "git"
   }
 }

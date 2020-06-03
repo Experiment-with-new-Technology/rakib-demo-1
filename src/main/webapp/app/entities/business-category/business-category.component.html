@@ -1,0 +1,70 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="blogApp.businessCategory.home.title">Business Categories</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-business-category"
+                [routerLink]="['/business-category/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span jhiTranslate="blogApp.businessCategory.home.createLabel">
+            Create a new Business Category
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="businessCategories?.length === 0">
+        <span jhiTranslate="blogApp.businessCategory.home.notFound">No businessCategories found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="businessCategories && businessCategories.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+                <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+                <th scope="col"><span jhiTranslate="blogApp.businessCategory.name">Name</span></th>
+                <th scope="col"><span jhiTranslate="blogApp.businessCategory.parentCategory">Parent Category</span></th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let businessCategory of businessCategories ;trackBy: trackId">
+                <td><a [routerLink]="['/business-category', businessCategory.id, 'view']">{{ businessCategory.id }}</a>
+                </td>
+                <td>{{ businessCategory.name }}</td>
+                <td>
+                    <div *ngIf="businessCategory.parentCategory">
+                        <a [routerLink]="['/business-category', businessCategory.parentCategory?.id, 'view']">{{
+                            businessCategory.parentCategory?.id }}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/business-category', businessCategory.id, 'view']"
+                                class="btn btn-info btn-sm">
+                            <fa-icon icon="eye"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+
+                        <button type="submit"
+                                [routerLink]="['/business-category', businessCategory.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon icon="pencil-alt"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+
+                        <button type="submit" (click)="delete(businessCategory)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon icon="times"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

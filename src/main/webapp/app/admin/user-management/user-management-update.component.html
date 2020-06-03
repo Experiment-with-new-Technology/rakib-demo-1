@@ -18,7 +18,8 @@
                     <input type="text" class="form-control" name="login"
                            formControlName="login">
 
-                    <div *ngIf="editForm.get('login')!.invalid && (editForm.get('login')!.dirty || editForm.get('login')!.touched)">
+                    <div
+                        *ngIf="editForm.get('login')!.invalid && (editForm.get('login')!.dirty || editForm.get('login')!.touched)">
                         <small class="form-text text-danger"
                                *ngIf="editForm.get('login')?.errors?.required"
                                jhiTranslate="entity.validation.required">
@@ -45,7 +46,8 @@
                     <input type="text" class="form-control" name="firstName"
                            formControlName="firstName">
 
-                    <div *ngIf="editForm.get('firstName')!.invalid && (editForm.get('firstName')!.dirty || editForm.get('firstName')!.touched)">
+                    <div
+                        *ngIf="editForm.get('firstName')!.invalid && (editForm.get('firstName')!.dirty || editForm.get('firstName')!.touched)">
                         <small class="form-text text-danger"
                                *ngIf="editForm.get('firstName')?.errors?.maxlength"
                                jhiTranslate="entity.validation.maxlength"
@@ -60,7 +62,8 @@
                     <input type="text" class="form-control" name="lastName"
                            formControlName="lastName">
 
-                    <div *ngIf="editForm.get('lastName')!.invalid && (editForm.get('lastName')!.dirty || editForm.get('lastName')!.touched)">
+                    <div
+                        *ngIf="editForm.get('lastName')!.invalid && (editForm.get('lastName')!.dirty || editForm.get('lastName')!.touched)">
                         <small class="form-text text-danger"
                                *ngIf="editForm.get('lastName')?.errors?.maxlength"
                                jhiTranslate="entity.validation.maxlength"
@@ -74,7 +77,8 @@
                     <label class="form-control-label" jhiTranslate="userManagement.email">Email</label>
                     <input type="email" class="form-control" name="email" formControlName="email">
 
-                    <div *ngIf="editForm.get('email')!.invalid && (editForm.get('email')!.dirty || editForm.get('email')!.touched)">
+                    <div
+                        *ngIf="editForm.get('email')!.invalid && (editForm.get('email')!.dirty || editForm.get('email')!.touched)">
                         <small class="form-text text-danger"
                                *ngIf="editForm.get('email')?.errors?.required"
                                jhiTranslate="entity.validation.required">
@@ -114,7 +118,9 @@
                 <div class="form-group" *ngIf="languages && languages.length > 0">
                     <label jhiTranslate="userManagement.langKey">Lang Key</label>
                     <select class="form-control" id="langKey" name="langKey" formControlName="langKey">
-                        <option *ngFor="let language of languages" [value]="language">{{ language | findLanguageFromKey }}</option>
+                        <option *ngFor="let language of languages" [value]="language">{{ language | findLanguageFromKey
+                            }}
+                        </option>
                     </select>
                 </div>
 

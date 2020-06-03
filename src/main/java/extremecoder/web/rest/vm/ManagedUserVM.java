@@ -1,6 +1,7 @@
 package extremecoder.web.rest.vm;
 
 import extremecoder.service.dto.UserDTO;
+
 import javax.validation.constraints.Size;
 
 /**

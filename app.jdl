@@ -1,0 +1,22 @@
+entity AppStatus {
+	status String
+}
+
+entity Application {
+	name String,
+    version String
+}
+
+relationship ManyToOne {
+	Application{status} to AppStatus
+    Application{businessCategory} to BusinessCategory
+}
+
+entity BusinessCategory {
+	name String
+}
+
+relationship OneToOne {
+	BusinessCategory{parentCategory} to BusinessCategory
+}
+

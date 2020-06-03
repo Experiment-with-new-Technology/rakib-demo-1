@@ -43,7 +43,7 @@ public class MailService {
     private final SpringTemplateEngine templateEngine;
 
     public MailService(JHipsterProperties jHipsterProperties, JavaMailSender javaMailSender,
-            MessageSource messageSource, SpringTemplateEngine templateEngine) {
+                       MessageSource messageSource, SpringTemplateEngine templateEngine) {
 
         this.jHipsterProperties = jHipsterProperties;
         this.javaMailSender = javaMailSender;
@@ -66,7 +66,7 @@ public class MailService {
             message.setText(content, isHtml);
             javaMailSender.send(mimeMessage);
             log.debug("Sent email to User '{}'", to);
-        }  catch (MailException | MessagingException e) {
+        } catch (MailException | MessagingException e) {
             log.warn("Email could not be sent to user '{}'", to, e);
         }
     }

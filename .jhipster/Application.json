@@ -1,0 +1,40 @@
+{
+  "name": "Application",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "version",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "appStatus",
+      "otherEntityRelationshipName": "application",
+      "relationshipName": "status",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "businessCategory",
+      "otherEntityRelationshipName": "application",
+      "relationshipName": "businessCategory",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200603072126",
+  "entityTableName": "application",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

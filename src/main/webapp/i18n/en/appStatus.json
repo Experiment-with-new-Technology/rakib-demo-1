@@ -1,0 +1,22 @@
+{
+  "blogApp": {
+    "appStatus": {
+      "home": {
+        "title": "App Statuses",
+        "createLabel": "Create a new App Status",
+        "createOrEditLabel": "Create or edit a App Status",
+        "notFound": "No App Statuses found"
+      },
+      "created": "A new App Status is created with identifier {{ param }}",
+      "updated": "A App Status is updated with identifier {{ param }}",
+      "deleted": "A App Status is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete App Status {{ id }}?"
+      },
+      "detail": {
+        "title": "App Status"
+      },
+      "status": "Status"
+    }
+  }
+}

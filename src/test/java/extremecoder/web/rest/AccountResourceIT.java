@@ -574,8 +574,8 @@ public class AccountResourceIT {
 
         restAccountMockMvc.perform(post("/api/account/change-password")
             .contentType(MediaType.APPLICATION_JSON)
-            .content(TestUtil.convertObjectToJsonBytes(new PasswordChangeDTO("1"+currentPassword, "new password")))
-)
+            .content(TestUtil.convertObjectToJsonBytes(new PasswordChangeDTO("1" + currentPassword, "new password")))
+        )
             .andExpect(status().isBadRequest());
 
         User updatedUser = userRepository.findOneByLogin("change-password-wrong-existing-password").orElse(null);
@@ -597,7 +597,7 @@ public class AccountResourceIT {
         restAccountMockMvc.perform(post("/api/account/change-password")
             .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(new PasswordChangeDTO(currentPassword, "new password")))
-)
+        )
             .andExpect(status().isOk());
 
         User updatedUser = userRepository.findOneByLogin("change-password").orElse(null);
@@ -620,7 +620,7 @@ public class AccountResourceIT {
         restAccountMockMvc.perform(post("/api/account/change-password")
             .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(new PasswordChangeDTO(currentPassword, newPassword)))
-)
+        )
             .andExpect(status().isBadRequest());
 
         User updatedUser = userRepository.findOneByLogin("change-password-too-small").orElse(null);
@@ -643,7 +643,7 @@ public class AccountResourceIT {
         restAccountMockMvc.perform(post("/api/account/change-password")
             .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(new PasswordChangeDTO(currentPassword, newPassword)))
-)
+        )
             .andExpect(status().isBadRequest());
 
         User updatedUser = userRepository.findOneByLogin("change-password-too-long").orElse(null);
@@ -664,7 +664,7 @@ public class AccountResourceIT {
         restAccountMockMvc.perform(post("/api/account/change-password")
             .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(new PasswordChangeDTO(currentPassword, "")))
-)
+        )
             .andExpect(status().isBadRequest());
 
         User updatedUser = userRepository.findOneByLogin("change-password-empty").orElse(null);
@@ -683,7 +683,7 @@ public class AccountResourceIT {
 
         restAccountMockMvc.perform(post("/api/account/reset-password/init")
             .content("password-reset@example.com")
-)
+        )
             .andExpect(status().isOk());
     }
 
@@ -699,7 +699,7 @@ public class AccountResourceIT {
 
         restAccountMockMvc.perform(post("/api/account/reset-password/init")
             .content("password-reset-upper-case@EXAMPLE.COM")
-)
+        )
             .andExpect(status().isOk());
     }
 
