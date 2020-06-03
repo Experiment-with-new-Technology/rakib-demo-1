@@ -1,0 +1,43 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "extremecoder",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "6.9.1",
+    "applicationType": "monolith",
+    "baseName": "blog",
+    "packageName": "extremecoder",
+    "packageFolder": "extremecoder",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "NzUzZDVhNTRkZDkzZjM2Y2M3NjlhOGJjZDNiOGNlYzQ1MDY5NDQzOTE5N2RiOTk5MTI2NGFkNTBmMWQwMmUzNjI3MjYwYjRjYTg5Y2M2ZGFhNzViNzQxODE3OGQ0MzlmNDcxNDBiYjZlNTJkOWYxOTkzYjdkNDQ4N2ZiMGM2Zjk=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "creationTimestamp": 1591166293079,
+    "testFrameworks": ["protractor"],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": ["en", "bn"],
+    "blueprints": []
+  }
+}
